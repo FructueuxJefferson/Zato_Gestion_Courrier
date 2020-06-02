@@ -78,7 +78,7 @@ public class DataOperations
     }
 
     public List Read(String name) throws FileNotFoundException, IOException, ClassNotFoundException {
-        List al;
+        List list;
         FileInputStream file = new FileInputStream(name);
         Throwable throwable = null;
         try {
@@ -88,7 +88,7 @@ public class DataOperations
                 ObjectInputStream reader = new ObjectInputStream(buffer);
                 Throwable throwable3 = null;
                 try {
-                    al = (List) reader.readObject();
+                	list = (List) reader.readObject();
                 } catch (IOException | ClassNotFoundException throwable4) {
                     throwable3 = throwable4;
                     throw throwable4;
@@ -137,7 +137,7 @@ public class DataOperations
                 }
             }
         }
-        return al;
+        return list;
     }
 
     public void Clean(String name) throws FileNotFoundException, IOException {

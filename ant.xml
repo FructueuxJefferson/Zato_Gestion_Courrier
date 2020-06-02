@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project Project with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR file Export Wizard-->
+    <!--ANT 1.7 is required-->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="D:/My_Projects/Java"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/Gestion.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="main.Gestion"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ derbyshared.jar derbyLocale_cs.jar derbyLocale_de_DE.jar derbyLocale_es.jar derbyLocale_fr.jar derbyLocale_hu.jar derbyLocale_it.jar derbyLocale_ja_JP.jar derbyLocale_ko_KR.jar derbyLocale_pl.jar derbyLocale_pt_BR.jar derbyLocale_ru.jar derbyLocale_zh_CN.jar derbyLocale_zh_TW.jar derby.jar derbyclient.jar derbynet.jar derbyoptionaltools.jar derbytools.jar derbyrun.jar controlsfx-11.0.1.jar itextpdf-5.5.13.1.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/build/classes"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyshared.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_cs.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_de_DE.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_es.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_fr.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_hu.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_it.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_ja_JP.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_ko_KR.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_pl.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_pt_BR.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_ru.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_zh_CN.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyLocale_zh_TW.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derby.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyclient.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbynet.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyoptionaltools.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbytools.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="derbyrun.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="controlsfx-11.0.1.jar"/>
+            <zipfileset dir="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars" includes="itextpdf-5.5.13.1.jar"/>
+        </jar>
+    </target>
+</project>

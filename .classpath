@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derby.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyclient.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_cs.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_de_DE.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_es.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_fr.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_hu.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_it.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_ja_JP.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_ko_KR.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_pl.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_pt_BR.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_ru.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_zh_CN.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyLocale_zh_TW.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbynet.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyoptionaltools.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyrun.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbyshared.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/derbytools.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/controlsfx-11.0.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Perfection/OneDrive/ZatoGestionCouriel/Project/libs/jars/itextpdf-5.5.13.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

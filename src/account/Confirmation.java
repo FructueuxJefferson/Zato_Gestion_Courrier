@@ -10,12 +10,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -24,6 +28,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import operations.DataOperations;
 import operations.GetDimension;
+import properties.Properties;
 import utils.Utils;
 
 /**
@@ -32,102 +37,126 @@ import utils.Utils;
  */
 public class Confirmation extends Parent {
 
-    Text codeText, hintText;
+	Text codeText, hintText;
 
-    Text title;
+	Text title;
 
-    Button confirm, back;
+	Button copy, confirm, back;
 
-    Text info;
+	Text info;
 
-    private static final String ALPHA_NUMERIC_STRING = "abcdefghijklmnopqrstuvwxyz0123456789#@_-&";
+	private static final String ALPHA_NUMERIC_STRING = "abcdefghijklmnopqrstuvwxyz0123456789#@_-&";
 
-    public Confirmation() {
-        Important.getRoot().setCursor(Cursor.DEFAULT);
+	public Confirmation() {
+		Important.getRoot().setCursor(Cursor.DEFAULT);
 
-        codeText = new Text(randomAlphaNumeric(10));
-        hintText = new Text("Ceci est votre identifiant de connexion\nVeuillez ne pas le perdre ou vous perdrez la connexion à votre compte");
-        info = new Text("");
+		codeText = new Text(randomAlphaNumeric(10));
+		hintText = new Text(
+				"Ceci est votre identifiant de connexion\nVeuillez ne pas le perdre ou vous perdrez la connexion à votre compte\n"
+						+ "Appuyez sur copier afin de le sauvegarder en mémoire et le coller ensuite !!!");
+		info = new Text("");
 
-        codeText.setFont(Font.font(GetDimension.getDynamicWidth(30)));
-        hintText.setFont(Font.font(GetDimension.getDynamicWidth(30)));
-        info.setFont(Font.font(GetDimension.getDynamicWidth(20)));
+		codeText.setFont(Font.font(GetDimension.getDynamicWidth(30)));
+		hintText.setFont(Font.font(GetDimension.getDynamicWidth(25)));
+		info.setFont(Font.font(GetDimension.getDynamicWidth(20)));
 
-        title = new Text("Gestion du Courier\n     (Confirmation)");
-        title.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(50)));
-        //title.setUnderline(true);
-        title.setFill(Color.BLACK);
+		title = new Text("Gestion du Courier\n     (Confirmation)");
+		title.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(50)));
+		// title.setUnderline(true);
+		title.setFill(Color.BLACK);
 
-        confirm = new Button("Connexion");
-        confirm.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(20)));
-        back = new Button("Retour");
-        back.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(20)));
+		copy = new Button("Copier");
+		copy.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(20)));
+		confirm = new Button("Connexion");
+		confirm.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(20)));
+		back = new Button("Retour");
+		back.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(20)));
 
-        Listeiners();
-        hintText.setTextAlignment(TextAlignment.CENTER);
-        codeText.setFill(Color.GREEN);
-        hintText.setFill(Color.RED);
-    }
+		Listeiners();
+		hintText.setTextAlignment(TextAlignment.CENTER);
+		codeText.setFill(Color.GREEN);
+		hintText.setFill(Color.RED);
+	}
 
-    public void draw() {
-        PlaceTO(codeText, 850, 450);
-        PlaceTO(hintText, 450, 550);
+	public void draw() {
+		PlaceTO(codeText, 850, 450);
+		PlaceTO(hintText, 450, 550);
 
-        PlaceTO(title, 700, 100);
+		PlaceTO(title, 700, 100);
 
-        PlaceTO(confirm, 675, 700);
-        PlaceTO(back, 1075, 700);
+		PlaceTO(copy, 675, 700);
+		PlaceTO(confirm, 875, 700);
+		PlaceTO(back, 1075, 700);
 
-        PlaceTO(info, 900, 675);
-    }
+		PlaceTO(info, 900, 675);
+	}
 
-    public void PlaceTO(Node node, double x, double y) {
-        this.getChildren().add(node);
-        node.setTranslateX(GetDimension.getDynamicWidth(x));
-        node.setTranslateY(GetDimension.getDynamicHeight(y));
-    }
+	public void PlaceTO(Node node, double x, double y) {
+		this.getChildren().add(node);
+		node.setTranslateX(GetDimension.getDynamicWidth(x));
+		node.setTranslateY(GetDimension.getDynamicHeight(y));
+	}
 
-    public String randomAlphaNumeric(int count) {
-        StringBuilder builder = new StringBuilder();
-        while (count-- != 0) {
-            int character = (int) (Math.random() * ALPHA_NUMERIC_STRING.length());
-            builder.append(ALPHA_NUMERIC_STRING.charAt(character));
-        }
-        return builder.toString();
-    }
+	public String randomAlphaNumeric(int count) {
+		StringBuilder builder = new StringBuilder();
+		while (count-- != 0) {
+			int character = (int) (Math.random() * ALPHA_NUMERIC_STRING.length());
+			builder.append(ALPHA_NUMERIC_STRING.charAt(character));
+		}
+		return builder.toString();
+	}
 
-    public void clear() {
-        this.getChildren().clear();
-    }
+	public void clear() {
+		this.getChildren().clear();
+	}
 
-    public void Listeiners() {
-        back.setOnMouseClicked(event -> {
-            clear();
-            SignIn signIn = new SignIn();
-            signIn.draw();
-            this.getChildren().add(signIn);
-        });
+	public void Listeiners() {
+		copy.setOnMouseClicked(event -> {
+			Copy();
+		});
 
-        confirm.setOnMouseClicked(event -> {
-            List<String> accountData = new ArrayList<>();
-            accountData.add(codeText.getText());
-            accountData.add(AccountData.getFullName());
-            accountData.add(AccountData.getPassword());
-            accountData.add(AccountData.getMail());
-            accountData.add(AccountData.getNumber());
-            AccountData.setId(codeText.getText());
-            //System.out.println(AccountData.getFullName()+"\t"+AccountData.getPassword()+"\t"+AccountData.getMail()+"\t"+AccountData.getNumber());
-            try {
-                new DataOperations().Write(Utils.JarPath()+"/data/account.data", accountData);
+		back.setOnMouseClicked(event -> {
+			clear();
+			SignIn signIn = new SignIn();
+			signIn.draw();
+			this.getChildren().add(signIn);
+		});
 
-                clear();
-                LogIn logIn = new LogIn();
-                logIn.draw();
-                
-                this.getChildren().add(logIn);
-            } catch (IOException | ClassNotFoundException ex) {
-                Logger.getLogger(Confirmation.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
-    }
+		confirm.setOnMouseClicked(event -> {
+			List<String> accountData = new ArrayList<>();
+			accountData.add(codeText.getText());
+			accountData.add(AccountData.getFullName());
+			accountData.add(AccountData.getPassword());
+			accountData.add(AccountData.getMail());
+			accountData.add(AccountData.getNumber());
+			AccountData.setId(codeText.getText());
+			// System.out.println(AccountData.getFullName()+"\t"+AccountData.getPassword()+"\t"+AccountData.getMail()+"\t"+AccountData.getNumber());
+			try {
+				new DataOperations().Write(Properties.savePath, accountData);
+
+				clear();
+				LogIn logIn = new LogIn();
+				logIn.draw();
+
+				this.getChildren().add(logIn);
+			} catch (IOException | ClassNotFoundException ex) {
+				Logger.getLogger(Confirmation.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		});
+	}
+
+	private void Copy() {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Copie d'identifiant");
+
+		// Header Text: null
+		alert.setHeaderText(null);
+		alert.setContentText("Identifiant copié en mémoire");
+
+		Optional<ButtonType> option = alert.showAndWait();
+
+		if (option.get() == ButtonType.OK) {
+			Utils.copyToClipboardText(codeText.getText());
+		}
+	}
 }

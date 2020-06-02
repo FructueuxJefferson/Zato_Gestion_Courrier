@@ -9,6 +9,7 @@ module Project {
 	exports board;
 	exports frame;
 	exports notification;
+	exports properties;
 
 	requires itextpdf;
 	requires java.desktop;

@@ -24,6 +24,8 @@ import courriel.CourrierModel;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -34,7 +36,7 @@ import operations.GetDimension;
  *
  * @author Perfection
  */
-public class Utils {
+public class Utils {	
 	
 	public static String JarPath() {
 		File f = new File(System.getProperty("java.class.path"));
@@ -134,4 +136,15 @@ public class Utils {
 		
 		return false;
 	}
+	
+	public static void copyToClipboardText(String s) {
+
+		final Clipboard clipboard = Clipboard.getSystemClipboard();
+		final ClipboardContent content = new ClipboardContent();
+
+		content.putString(s);
+		clipboard.setContent(content);
+
+	}
+	
 }

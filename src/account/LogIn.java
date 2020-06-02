@@ -27,6 +27,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import operations.DataOperations;
 import operations.GetDimension;
+import properties.Properties;
 import utils.Utils;
 
 /**
@@ -133,7 +134,7 @@ public class LogIn extends Parent {
         });
 
         connection.setOnMouseClicked(event -> {
-            if (new File(Utils.JarPath()+"/data/account.data").exists()) {
+            if (new File(Properties.savePath).exists()) {
                 if (id.getText().equals(AccountData.getId())) {
                     if (password.getText().equals(AccountData.getPassword())) {
                         info.setFill(Color.GREEN);
@@ -175,8 +176,8 @@ public class LogIn extends Parent {
     }
 
     public void getAccountData() throws IOException, FileNotFoundException, ClassNotFoundException {
-        if (new File("data/account.data").exists()) {
-            accountData = new DataOperations().Read("data/account.data");
+        if (new File(Properties.savePath).exists()) {
+            accountData = new DataOperations().Read(Properties.savePath);
 
             AccountData.setId(accountData.get(0));
             AccountData.setFullName(accountData.get(1));

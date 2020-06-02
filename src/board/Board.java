@@ -76,6 +76,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import operations.DataOperations;
 import operations.GetDimension;
+import properties.Properties;
 import utils.Utils;
 import notification.NotificationModel;
 
@@ -219,8 +220,8 @@ public class Board extends Parent {
 	}
 
 	public void GetAccountData() throws IOException, FileNotFoundException, ClassNotFoundException {
-		if (new File("data/account.data").exists()) {
-			accountData = new DataOperations().Read("data/account.data");
+		if (new File(Properties.savePath).exists()) {
+			accountData = new DataOperations().Read(Properties.savePath);
 
 			AccountData.setId(accountData.get(0));
 			AccountData.setFullName(accountData.get(1));

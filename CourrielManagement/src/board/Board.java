@@ -136,7 +136,7 @@ public class Board extends Parent {
 
 		GetAccountData();
 
-		title = new Text("Bienvenu " + accountData.get(1));
+		title = new Text("Bienvenu(e) " + accountData.get(1));
 		title.setFont(Font.font("Arial", FontWeight.BLACK, GetDimension.getDynamicWidth(50)));
 		// title.setUnderline(true);
 		title.setFill(Color.BLACK);
